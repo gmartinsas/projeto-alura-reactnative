@@ -1,12 +1,27 @@
-import { SafeAreaView } from 'react-native';
+import { SafeAreaView, StatusBar, View } from 'react-native';
+import { 
+  useFonts, 
+  Montserrat_400Regular, 
+  Montserrat_700Bold 
+} from '@expo-google-fonts/montserrat';
 
-
-import Cesta from './src/screens/cesta';
+import Cesta from './src/screens/Cesta';
+import mock from './src/mocks/cesta';
 
 export default function App() {
-  return (
-    <SafeAreaView>
-      <Cesta />
-    </SafeAreaView>
-  );
+  const [FonteCarregada] = useFonts ({
+    "MontserratRegular": Montserrat_400Regular,
+    "MontserratBold": Montserrat_700Bold
+  })
+
+  if (!FonteCarregada) {
+      return <View />
+  } else {
+      return (
+        <SafeAreaView>
+          <StatusBar />
+          <Cesta {...mock} />
+        </SafeAreaView>
+      );
+  }  
 }
