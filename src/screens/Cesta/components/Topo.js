@@ -20,7 +20,7 @@ const Estilos = StyleSheet.create({
     },
     titulo: {
         position: "absolute",
-        top: "5%",
+        top: "2%",
         width: "100%",
         textAlign: "center",
         fontSize: 24,
